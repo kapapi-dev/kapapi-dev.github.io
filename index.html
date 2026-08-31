@@ -3,21 +3,206 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>maxtop9843-byte</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-         max-width: 34rem; margin: 0 auto; padding: 4rem 1.25rem; color: #202124; background: #fff; }
-  @media (prefers-color-scheme: dark) { body { color: #e8eaed; background: #131314; } a { color: #8ab4f8; } }
-  h1 { font-size: 1.5rem; }
-  li { margin: .4rem 0; }
-</style>
+<title>KaPaPi — small, careful tools for Google Workspace</title>
+<meta name="description" content="KaPaPi builds small Google Workspace add-ons that do one thing carefully. Minimum permissions, nothing uploaded, and a refusal to guess when guessing could damage your document.">
+<link rel="canonical" href="https://kapapi.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kapapi.com/">
+<meta property="og:title" content="KaPaPi — small, careful tools for Google Workspace">
+<meta property="og:description" content="Small Google Workspace add-ons that do one thing carefully. Minimum permissions, nothing uploaded.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314181d'/%3E%3Crect x='7' y='13' width='4' height='12' rx='2' fill='%23fbfbfa'/%3E%3Crect x='14' y='7' width='4' height='18' rx='2' fill='%23fbfbfa'/%3E%3Crect x='21' y='17' width='4' height='8' rx='2' fill='%23d98218'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kapapi.css">
 </head>
 <body>
-<h1>Projects</h1>
-<ul>
-  <li><a href="./sortdoc-site/">SortDoc</a> — a Google Docs add-on that sorts selected
-      paragraphs or list items without losing their formatting.</li>
-</ul>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <nav class="site-nav">
+      <a href="#tools">Tools</a>
+      <a href="#how">How we build</a>
+      <a href="https://github.com/kapapi-dev">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Small tools that don&rsquo;t<br>break your documents.</h1>
+      <p class="lead">
+        KaPaPi makes Google Workspace add-ons that each do one thing, carefully.
+        They ask for the narrowest permission that works, they send nothing anywhere,
+        and when they cannot tell what you meant, they leave your document alone.
+      </p>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <p class="eyebrow">Tools</p>
+      <h2>Two, so far.</h2>
+      <p class="lead" style="margin-bottom:2.25rem">
+        Both are free, both are open source, and both work only inside the one document you open them in.
+      </p>
+
+      <div class="products">
+
+        <a class="product cleanpaste" href="/cleanpaste/">
+          <span class="icon" aria-hidden="true">
+            <span class="bars"><i style="width:100%"></i><i style="width:100%"></i><i style="width:55%"></i></span>
+          </span>
+          <h3>CleanPaste</h3>
+          <p class="what">
+            Cleans up text pasted from PDFs, web pages and AI tools. Repairs the line breaks
+            a paste cut mid-sentence, removes doubled spaces and invisible characters, and
+            keeps your bold, links and lists exactly where they were.
+          </p>
+          <span class="go">Google Docs &rarr;</span>
+        </a>
+
+        <a class="product sortdoc" href="/sortdoc/">
+          <span class="icon" aria-hidden="true">
+            <span class="bars"><i style="width:45%"></i><i style="width:70%"></i><i style="width:100%"></i></span>
+          </span>
+          <h3>SortDoc</h3>
+          <p class="what">
+            Sorts the paragraphs or list items you have selected, A&nbsp;to&nbsp;Z or Z&nbsp;to&nbsp;A.
+            It reorders the elements themselves rather than retyping them, so headings,
+            bullets, links and bold move with the lines they belong to.
+          </p>
+          <span class="go">Google Docs &rarr;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="eyebrow">How we build</p>
+      <h2>Four rules, and they cost us features.</h2>
+      <p class="lead" style="margin-bottom:2.75rem">
+        These are not aspirations. Each one has changed what shipped, and each one is
+        checkable against the source.
+      </p>
+
+      <div class="principles">
+
+        <div class="principle">
+          <span class="n">01</span>
+          <h3>Refuse rather than guess</h3>
+          <p>
+            When a tool cannot tell what you meant, it does nothing and says so. A missed
+            change costs you one keypress. A wrong one is not obvious for an hour.
+          </p>
+        </div>
+
+        <div class="principle">
+          <span class="n">02</span>
+          <h3>The narrowest permission</h3>
+          <p>
+            Our add-ons ask to see the one document they are open in — not your Drive, not
+            your other files. They cannot open something you have not opened them in.
+          </p>
+        </div>
+
+        <div class="principle">
+          <span class="n">03</span>
+          <h3>Nothing leaves the document</h3>
+          <p>
+            No servers, no analytics, no accounts, no AI services. Your text is read and
+            edited inside Google&rsquo;s own runtime and goes nowhere else. There is nothing
+            to leak because there is nothing collected.
+          </p>
+        </div>
+
+        <div class="principle">
+          <span class="n">04</span>
+          <h3>Measure, don&rsquo;t assume</h3>
+          <p>
+            Behaviour that the documentation leaves ambiguous gets tested in a real
+            document before anything is built on it. Four such findings changed CleanPaste
+            after it already &ldquo;worked&rdquo;.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">Why the formatting survives</p>
+      <h2>We edit documents in place.</h2>
+      <p>
+        The usual way to change a paragraph is to read it out as plain text, fix the string,
+        and type it back. That round trip is also how this class of add-on loses your work:
+        everything that is not a character &mdash; bold runs, italics, links, colours, list
+        membership &mdash; is discarded on the way.
+      </p>
+      <p>
+        Our tools never hold a &ldquo;fixed version&rdquo; of your paragraph. They compute
+        which characters to delete and which elements to move, then do exactly that. Deleting
+        a character cannot disturb the formatting of the characters left behind.
+      </p>
+
+      <div class="demo">
+        <pre>The committee reviewed the
+proposal at length
+and agreed to postpone it.</pre>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+        <pre>The committee reviewed the
+proposal at length and agreed
+to postpone it.</pre>
+      </div>
+
+      <p style="color:var(--ink-muted);font-size:0.95rem">
+        CleanPaste joining a line the paste broke mid-sentence &mdash; and leaving the
+        paragraph break that follows it alone.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">Open source</p>
+      <h2>You can check all of it.</h2>
+      <p>
+        Every claim on this page is verifiable against the source. The repositories include
+        the test suites, the fixtures, and the notes on what was measured and what it changed.
+      </p>
+      <p>
+        <a href="https://github.com/kapapi-dev">github.com/kapapi-dev</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="wordmark" style="font-size:1rem">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </span>
+    <span class="spacer"></span>
+    <a href="/cleanpaste/">CleanPaste</a>
+    <a href="/sortdoc/">SortDoc</a>
+    <a href="https://github.com/kapapi-dev">GitHub</a>
+    <a href="mailto:support@kapapi.com">support@kapapi.com</a>
+  </div>
+</footer>
+
 </body>
 </html>

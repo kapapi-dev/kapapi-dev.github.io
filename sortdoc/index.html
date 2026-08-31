@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SortDoc — Google Docs add-on that sorts selected paragraphs | KaPaPi</title>
+<meta name="description" content="SortDoc is a Google Docs add-on that sorts the paragraphs or list items you have selected, A-Z or Z-A, without losing their formatting.">
+<link rel="canonical" href="https://kapapi.com/sortdoc/index.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5fb8'/%3E%3Crect x='7' y='8' width='8' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='14' width='13' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='20' width='18' height='3' rx='1.5' fill='%23d98218'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kapapi.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <nav class="site-nav">
+      <a href="/cleanpaste/">CleanPaste</a>
+      <a href="/sortdoc/">SortDoc</a>
+      <a href="https://github.com/kapapi-dev/sortdoc">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section style="padding-top:3.5rem">
+<div class="wrap wrap-narrow prose">
+
+  <p class="eyebrow" style="color:var(--sortdoc)">A KaPaPi tool for Google Docs</p>
+  <h1 style="font-size:clamp(2.2rem,5.5vw,3.2rem)">SortDoc</h1>
+  <p class="lead">
+    <strong>SortDoc is a Google Docs add-on that sorts the paragraphs or list items you have
+    selected</strong>, A&nbsp;to&nbsp;Z or Z&nbsp;to&nbsp;A, without flattening their formatting.
+  </p>
+
+  <div class="demo">
+    <pre>Banana
+Apple
+Cherry</pre>
+    <span class="arrow" aria-hidden="true">&rarr;</span>
+    <pre>Apple
+Banana
+Cherry</pre>
+  </div>
+
+  <p>Select the lines you want in order, then choose
+  <strong>Extensions &rarr; SortDoc &rarr; Sort A &rarr; Z</strong>. That is the whole product.</p>
+
+  <h2>Formatting moves with the line</h2>
+  <p>Most sorting tools read your lines out as plain text, sort the strings and type them back,
+  which is why bold, links, headings and bullets tend to disappear. SortDoc reorders the document
+  <em>elements</em> instead, so each line carries its own formatting with it.</p>
+
+  <h2>Sort rules</h2>
+  <table>
+    <tr><th>Rule</th><th>Behaviour</th></tr>
+    <tr><td>Case</td><td>Ignored when comparing (<code>banana</code> and <code>Banana</code> are equal)</td></tr>
+    <tr><td>Leading/trailing whitespace</td><td>Ignored when comparing; <strong>never removed from the document</strong></td></tr>
+    <tr><td>Comparison</td><td><code>localeCompare</code>, so accented and non-Latin text orders sensibly</td></tr>
+    <tr><td>Equal values</td><td>Keep their original relative order, in both directions (stable)</td></tr>
+    <tr><td>Empty paragraphs</td><td>Sort first A&rarr;Z, last Z&rarr;A</td></tr>
+    <tr><td>Numbers</td><td>Compared as text, so <code>10</code> sorts before <code>9</code></td></tr>
+  </table>
+
+  <div class="note">
+    <p>If SortDoc cannot sort a selection safely, it changes nothing and says so. Refusing is
+    always preferred over risking the document.</p>
+  </div>
+
+  <h2>Permissions</h2>
+  <table>
+    <tr><th>Permission</th><th>Why</th></tr>
+    <tr><td><code>documents.currentonly</code></td><td>Read and edit <strong>only the document it is open in</strong>. Not Drive, not your other documents</td></tr>
+    <tr><td><code>script.container.ui</code></td><td>Draw its menu and messages inside Google Docs</td></tr>
+  </table>
+  <p>SortDoc makes no network requests. Nothing about your document is sent anywhere, stored
+  anywhere, or logged. Full detail in the <a href="/sortdoc/privacy.html">privacy policy</a>.</p>
+
+  <h2>Good to know</h2>
+  <ul>
+    <li>Sorting is whole-block: it reorders the paragraphs you selected, it does not reorder words
+    inside a paragraph.</li>
+    <li>The selection must be a run of consecutive paragraphs or list items in the same part of the
+    document. Anything else is refused rather than guessed at.</li>
+    <li>Editor add-ons run on desktop only; Google does not support them in the Docs mobile apps.</li>
+  </ul>
+  <p>SortDoc is free. The source is public at
+  <a href="https://github.com/kapapi-dev/sortdoc">github.com/kapapi-dev/sortdoc</a>.</p>
+
+</div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="/" style="font-size:1rem;text-decoration:none">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <span class="spacer"></span>
+    <a href="/sortdoc/">SortDoc</a>
+    <a href="/sortdoc/privacy.html">Privacy</a>
+    <a href="/sortdoc/terms.html">Terms</a>
+    <a href="/sortdoc/support.html">Support</a>
+    <a href="mailto:support@kapapi.com">support@kapapi.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

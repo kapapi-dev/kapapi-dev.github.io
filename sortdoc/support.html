@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SortDoc support | KaPaPi</title>
+<meta name="description" content="Help for SortDoc: how to use it, what it refuses to do, and how to report a problem.">
+<link rel="canonical" href="https://kapapi.com/sortdoc/support.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5fb8'/%3E%3Crect x='7' y='8' width='8' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='14' width='13' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='20' width='18' height='3' rx='1.5' fill='%23d98218'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kapapi.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <nav class="site-nav">
+      <a href="/cleanpaste/">CleanPaste</a>
+      <a href="/sortdoc/">SortDoc</a>
+      <a href="https://github.com/kapapi-dev/sortdoc">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section style="padding-top:3.5rem">
+<div class="wrap wrap-narrow prose">
+
+  <p class="eyebrow">SortDoc</p>
+  <h1 style="font-size:clamp(2rem,5vw,2.8rem)">Support</h1>
+  <p class="lead">How to use it, what it refuses to do, and how to report a problem.</p>
+
+  <h2>Getting started</h2>
+  <ol>
+    <li>Install SortDoc from the Google Workspace Marketplace.</li>
+    <li>Open a Google Doc and select the paragraphs or list items you want in order.</li>
+    <li>Choose <strong>Extensions &rarr; SortDoc &rarr; Sort A &rarr; Z</strong> or
+        <strong>Sort Z &rarr; A</strong>.</li>
+  </ol>
+  <p>Press <strong>Ctrl+Z</strong> (<strong>Cmd+Z</strong> on Mac) to undo a sort. Google Docs also
+  keeps a full version history under <strong>File &rarr; Version history</strong>.</p>
+
+  <h2>Common questions</h2>
+
+  <h3>It says my selection is not supported</h3>
+  <p>SortDoc sorts a run of <em>consecutive</em> paragraphs or list items that sit next to each
+  other in the same part of the document. A selection that skips over a table or an image, spans two
+  different lists, or crosses two table cells is refused &mdash; reordering it would move things you
+  did not select. Your document is not changed when this happens.</p>
+
+  <h3>Numbers sorted in the wrong order</h3>
+  <p>Numbers are compared as text, so <code>10</code> sorts before <code>9</code>. Natural numeric
+  sorting is not implemented yet.</p>
+
+  <h3>My extra spaces are still there</h3>
+  <p>Deliberately. Leading and trailing whitespace is ignored when <em>comparing</em> lines, but
+  never removed from the document &mdash; SortDoc only reorders, it does not rewrite. If you want
+  that cleaned up, that is what <a href="/cleanpaste/">CleanPaste</a> is for.</p>
+
+  <h3>The menu does not appear</h3>
+  <p>Reload the document. Editor add-ons attach their menu when a document opens.</p>
+
+  <h3>Can I use it on my phone or tablet?</h3>
+  <p>No. Google Docs editor add-ons run in the desktop browser only.</p>
+
+  <h2>Reporting a problem</h2>
+  <ul>
+    <li><strong>Open an issue:</strong>
+        <a href="https://github.com/kapapi-dev/sortdoc/issues">github.com/kapapi-dev/sortdoc/issues</a></li>
+    <li><strong>Email:</strong> <a href="mailto:support@kapapi.com">support@kapapi.com</a></li>
+  </ul>
+  <p>Please do not paste confidential document content into a public issue.</p>
+
+</div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="/" style="font-size:1rem;text-decoration:none">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <span class="spacer"></span>
+    <a href="/sortdoc/">SortDoc</a>
+    <a href="/sortdoc/privacy.html">Privacy</a>
+    <a href="/sortdoc/terms.html">Terms</a>
+    <a href="/sortdoc/support.html">Support</a>
+    <a href="mailto:support@kapapi.com">support@kapapi.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

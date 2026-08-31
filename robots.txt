@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kapapi.com/sitemap.xml

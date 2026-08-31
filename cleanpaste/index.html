@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CleanPaste — Google Docs add-on that cleans up pasted text | KaPaPi</title>
+<meta name="description" content="CleanPaste is a Google Docs add-on that cleans up text pasted from PDFs, web pages and AI tools: broken line breaks, extra spaces, blank lines and hidden characters, without losing your formatting.">
+<link rel="canonical" href="https://kapapi.com/cleanpaste/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7b8a'/%3E%3Crect x='7' y='8' width='18' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='14' width='18' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='7' y='20' width='6' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='16' y='20' width='9' height='3' rx='1.5' fill='%23d98218'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kapapi.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <nav class="site-nav">
+      <a href="/cleanpaste/">CleanPaste</a>
+      <a href="/sortdoc/">SortDoc</a>
+      <a href="https://github.com/kapapi-dev/cleanpaste">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--cleanpaste)">A KaPaPi tool for Google Docs</p>
+      <h1>CleanPaste</h1>
+      <p class="lead">
+        <strong>CleanPaste is a Google Docs add-on that cleans up pasted text</strong> — the
+        broken line breaks, doubled spaces, surplus blank lines and invisible characters that
+        come with anything copied out of a PDF, a web page or an AI chat — without flattening
+        the formatting you want to keep.
+      </p>
+
+      <div class="demo">
+        <pre>The committee reviewed the
+proposal at length
+and agreed to postpone it.</pre>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+        <pre>The committee reviewed the
+proposal at length and agreed
+to postpone it.</pre>
+      </div>
+
+      <p style="color:var(--ink-muted);font-size:0.95rem;max-width:34rem">
+        Open <strong>Extensions &rarr; CleanPaste</strong> and choose <em>Clean selection</em>
+        or <em>Clean document</em>. That is the whole product. Ctrl+Z (Cmd+Z) undoes a clean
+        in one step.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow prose">
+      <p class="eyebrow">What it cleans</p>
+      <h2>Five cleanups, four on by default.</h2>
+
+      <table>
+        <tr><th>Cleanup</th><th>Default</th><th>What it changes</th></tr>
+        <tr><td><strong>Spacing</strong></td><td>on</td><td>Repeated spaces collapse to one; stray tabs become a space; leading indents and trailing spaces go; non-breaking and other exotic spaces become ordinary ones</td></tr>
+        <tr><td><strong>Extra blank lines</strong></td><td>on</td><td>A run of two or more empty lines collapses to one. A single blank line is never removed</td></tr>
+        <tr><td><strong>Hidden characters</strong></td><td>on</td><td>Zero-width spaces, word joiners, byte-order marks, soft hyphens and stray control characters</td></tr>
+        <tr><td><strong>Broken line breaks</strong></td><td>on</td><td>Rejoins lines that a paste cut mid-sentence, leaving real paragraph breaks alone</td></tr>
+        <tr><td><strong>Remove links</strong></td><td><strong>off</strong></td><td>Keeps the text, clears the link, and clears the blue and the underline it leaves behind</td></tr>
+      </table>
+
+      <p>
+        <em>Clean selection</em> works on whole paragraphs. Selecting half a sentence cleans the
+        paragraph it sits in, because cleaning half a paragraph produces a result nobody could predict.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow prose">
+      <p class="eyebrow">The careful part</p>
+      <h2>How it decides to join two lines.</h2>
+      <p>
+        This is the part that damages documents when it is done carelessly, and it is the top
+        complaint about the add-ons CleanPaste replaces: <em>&ldquo;it struggles to distinguish
+        between line breaks and paragraph breaks.&rdquo;</em>
+      </p>
+      <p>CleanPaste joins two lines only when <strong>all</strong> of the following hold:</p>
+      <ul>
+        <li>the first line is at least 30 characters &mdash; a deliberate short line is usually short</li>
+        <li>it does not end on <code>.</code> <code>!</code> <code>?</code> <code>:</code> <code>;</code> <code>,</code> or a closing quote or bracket</li>
+        <li>it ends on a letter, a digit or a hyphen</li>
+        <li>neither line reads as a heading &mdash; Title Case, ALL CAPS, or a real Docs heading style</li>
+        <li>neither line starts with a bullet or a number</li>
+        <li>both are ordinary paragraphs, not list items</li>
+      </ul>
+
+      <div class="note">
+        <p>
+          A missed join costs you one keypress. A wrong join welds two separate thoughts together
+          and is not obvious until much later. Every rule above is a reason to refuse.
+        </p>
+      </div>
+
+      <p>Two consequences worth knowing:</p>
+      <ul>
+        <li><strong>A line ending in a full stop is never joined</strong>, even mid-paragraph. From
+        the characters alone, a sentence that happens to end at the end of a line is
+        indistinguishable from a paragraph that ends there. CleanPaste leaves a break you can
+        delete rather than merging two paragraphs you cannot easily separate.</li>
+        <li><strong>A word split across a break keeps its hyphen.</strong> <code>perfor-</code> /
+        <code>mance</code> joins to <code>perfor-mance</code>, not <code>performance</code>, because
+        dropping the hyphen would also destroy it in <code>well-</code> / <code>known</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow prose">
+      <p class="eyebrow">Verified, not asserted</p>
+      <h2>Your formatting survives.</h2>
+      <p>
+        CleanPaste edits your document in place, character by character. It never reads a paragraph
+        out as plain text and types it back, which is how this kind of add-on usually loses your work.
+      </p>
+      <p>
+        The following were checked by exporting a real document from Google after a clean and
+        comparing it formatting run by formatting run &mdash; not by eye:
+      </p>
+      <table>
+        <tr><th>Content</th><th>Result</th></tr>
+        <tr><td>Bold, italic, bold + italic</td><td>Preserved, at their exact character ranges</td></tr>
+        <tr><td>Hyperlinks</td><td>Preserved, unless link removal is switched on</td></tr>
+        <tr><td>Bulleted, numbered and nested lists</td><td>Preserved, including list identity and nesting level</td></tr>
+        <tr><td>Headings</td><td>Preserved, and never merged into body text</td></tr>
+        <tr><td>Tables</td><td>Spacing and hidden characters cleaned in cells; the table&rsquo;s shape untouched</td></tr>
+        <tr><td>Korean, mixed Korean/English</td><td>Cleaned by the same rules; CJK is never mistaken for a heading</td></tr>
+        <tr><td>Emoji, Arabic, Persian, Indic scripts</td><td>Preserved &mdash; ZWJ and ZWNJ are deliberately not stripped</td></tr>
+        <tr><td>Currency, numbers, URLs, code-like text</td><td>Untouched</td></tr>
+      </table>
+      <p style="font-size:0.95rem;color:var(--ink-muted)">
+        Running CleanPaste twice produces no further change &mdash; verified in a live document
+        with a byte-identical export.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow prose">
+      <p class="eyebrow">Permissions</p>
+      <h2>It sees one document. Yours.</h2>
+      <table>
+        <tr><th>Permission</th><th>Why</th></tr>
+        <tr><td><code>documents.currentonly</code></td><td>Read and edit <strong>only the document it is open in</strong>. Not Drive, not your other documents</td></tr>
+        <tr><td><code>script.container.ui</code></td><td>Draw its menu and its panel inside Google Docs</td></tr>
+      </table>
+      <p>
+        CleanPaste makes no network requests of any kind. There is no server, no database, no
+        account, no API key, no analytics and no AI service. Your text is read and edited inside
+        Google&rsquo;s own Apps Script runtime and goes nowhere else.
+      </p>
+      <p>
+        Google attaches <code>userinfo.email</code> and <code>userinfo.profile</code> to every
+        Marketplace listing automatically; CleanPaste&rsquo;s own code never reads them. Full detail
+        in the <a href="/cleanpaste/privacy.html">privacy policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow prose">
+      <p class="eyebrow">Known limitations</p>
+      <h2>What it will not do.</h2>
+      <ul>
+        <li>Inside a <strong>table cell</strong>, only spacing and hidden characters are cleaned.
+        A cell is narrow enough that a deliberate break looks exactly like a wrapped one.</li>
+        <li>The <strong>last paragraph of a document</strong> is never removed or merged away.
+        Apps Script forbids it.</li>
+        <li><strong>Two consecutive paragraphs that both end without punctuation</strong> are
+        treated as one wrapped paragraph and joined. That is the PDF-paste signature this exists
+        to repair; real prose almost always ends a paragraph with punctuation.</li>
+        <li><strong>Leading whitespace is removed</strong> &mdash; right for pasted prose, wrong for
+        pasted code. Switch Spacing off, or press Ctrl+Z.</li>
+        <li>Editor add-ons run on <strong>desktop only</strong>. Google does not support them in
+        the Docs mobile apps.</li>
+      </ul>
+      <p>
+        CleanPaste is free, with no trial, no upgrade prompt and no paid tier. The source is public
+        at <a href="https://github.com/kapapi-dev/cleanpaste">github.com/kapapi-dev/cleanpaste</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="/" style="font-size:1rem;text-decoration:none">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <span class="spacer"></span>
+    <a href="/cleanpaste/privacy.html">Privacy</a>
+    <a href="/cleanpaste/terms.html">Terms</a>
+    <a href="/cleanpaste/support.html">Support</a>
+    <a href="mailto:support@kapapi.com">support@kapapi.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
