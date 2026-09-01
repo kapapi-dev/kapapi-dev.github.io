@@ -19,7 +19,7 @@ HEAD = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>__TITLE__</title>
 <meta name="description" content="__DESC__">
-<link rel="canonical" href="https://kapapi.com/__PATH__">
+<link rel="canonical" href="https://kapapi.dev/__PATH__">
 <link rel="icon" href="__ICON__">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +63,7 @@ FOOT = """
     <a href="/__SLUG__/privacy.html">Privacy</a>
     <a href="/__SLUG__/terms.html">Terms</a>
     <a href="/__SLUG__/support.html">Support</a>
-    <a href="mailto:support@kapapi.com">support@kapapi.com</a>
+    <a href="mailto:support@kapapi.dev">support@kapapi.dev</a>
   </div>
 </footer>
 

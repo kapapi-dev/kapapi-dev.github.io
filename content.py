@@ -61,7 +61,7 @@ CLEANPASTE_TERMS = """
   where you live.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:support@kapapi.com">support@kapapi.com</a></p>
+  <p><a href="mailto:support@kapapi.dev">support@kapapi.dev</a></p>
 """
 
 CLEANPASTE_SUPPORT = """
@@ -131,7 +131,7 @@ CLEANPASTE_SUPPORT = """
   <ul>
     <li><strong>Open an issue:</strong>
         <a href="https://github.com/kapapi-dev/cleanpaste/issues">github.com/kapapi-dev/cleanpaste/issues</a></li>
-    <li><strong>Email:</strong> <a href="mailto:support@kapapi.com">support@kapapi.com</a></li>
+    <li><strong>Email:</strong> <a href="mailto:support@kapapi.dev">support@kapapi.dev</a></li>
   </ul>
   <p>Please do not paste confidential document content into a public issue.</p>
 """
@@ -249,7 +249,7 @@ SORTDOC_PRIVACY = """
   Because SortDoc stores nothing, there is nothing left behind to delete.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:support@kapapi.com">support@kapapi.com</a></p>
+  <p><a href="mailto:support@kapapi.dev">support@kapapi.dev</a></p>
 """
 
 SORTDOC_TERMS = """
@@ -301,7 +301,7 @@ SORTDOC_TERMS = """
   protection of any mandatory consumer law that applies where you live.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:support@kapapi.com">support@kapapi.com</a></p>
+  <p><a href="mailto:support@kapapi.dev">support@kapapi.dev</a></p>
 """
 
 SORTDOC_SUPPORT = """
@@ -346,7 +346,7 @@ SORTDOC_SUPPORT = """
   <ul>
     <li><strong>Open an issue:</strong>
         <a href="https://github.com/kapapi-dev/sortdoc/issues">github.com/kapapi-dev/sortdoc/issues</a></li>
-    <li><strong>Email:</strong> <a href="mailto:support@kapapi.com">support@kapapi.com</a></li>
+    <li><strong>Email:</strong> <a href="mailto:support@kapapi.dev">support@kapapi.dev</a></li>
   </ul>
   <p>Please do not paste confidential document content into a public issue.</p>
 """
