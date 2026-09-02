@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KaPaPi — small, careful tools for Google Workspace</title>
-<meta name="description" content="KaPaPi builds small Google Workspace add-ons that do one thing carefully. Minimum permissions, nothing uploaded, and a refusal to guess when guessing could damage your document.">
+<title>KaPaPi — small, careful tools for everyday work</title>
+<meta name="description" content="KaPaPi builds focused tools for Google Workspace and Windows. Each product does one job carefully, asks for the narrowest permission it needs, and makes its data boundary explicit.">
 <link rel="canonical" href="https://kapapi.dev/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kapapi.dev/">
-<meta property="og:title" content="KaPaPi — small, careful tools for Google Workspace">
-<meta property="og:description" content="Small Google Workspace add-ons that do one thing carefully. Minimum permissions, nothing uploaded.">
+<meta property="og:title" content="KaPaPi — small, careful tools for everyday work">
+<meta property="og:description" content="Focused tools for Google Workspace and Windows, built with narrow permissions and explicit data boundaries.">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314181d'/%3E%3Crect x='7' y='13' width='4' height='12' rx='2' fill='%23fbfbfa'/%3E%3Crect x='14' y='7' width='4' height='18' rx='2' fill='%23fbfbfa'/%3E%3Crect x='21' y='17' width='4' height='8' rx='2' fill='%23d98218'/%3E%3C/svg%3E">
 
@@ -39,11 +39,11 @@
 
   <section class="hero">
     <div class="wrap">
-      <h1>Small tools that don&rsquo;t<br>break your documents.</h1>
+      <h1>Small tools that respect<br> the work around them.</h1>
       <p class="lead">
-        KaPaPi makes Google Workspace add-ons that each do one thing, carefully.
-        They ask for the narrowest permission that works, they send nothing anywhere,
-        and when they cannot tell what you meant, they leave your document alone.
+        KaPaPi makes focused tools for Google Workspace and Windows. Each one does
+        a narrow job, explains what it can touch, and refuses to guess when a wrong
+        action would be harder to undo than no action at all.
       </p>
     </div>
   </section>
@@ -51,9 +51,9 @@
   <section id="tools">
     <div class="wrap">
       <p class="eyebrow">Tools</p>
-      <h2>Two, so far.</h2>
+      <h2>Three, so far.</h2>
       <p class="lead" style="margin-bottom:2.25rem">
-        Both are free, both are open source, and both work only inside the one document you open them in.
+        Each product has one clear job, a public source trail, and a deliberately small permission boundary.
       </p>
 
       <div class="products">
@@ -84,6 +84,18 @@
           <span class="go">Google Docs &rarr;</span>
         </a>
 
+        <a class="product sendarc" href="/sendarc/">
+          <span class="icon" aria-hidden="true">
+            <span class="arc-mark"><i></i><i></i></span>
+          </span>
+          <h3>SendArc <span class="tag">Windows beta</span></h3>
+          <p class="what">
+            Bridges email commands from legacy Windows applications to Gmail. It shows
+            a local preview first and sends only after you explicitly confirm the message.
+          </p>
+          <span class="go">Windows + Gmail &rarr;</span>
+        </a>
+
       </div>
     </div>
   </section>
@@ -112,18 +124,18 @@
           <span class="n">02</span>
           <h3>The narrowest permission</h3>
           <p>
-            Our add-ons ask to see the one document they are open in — not your Drive, not
-            your other files. They cannot open something you have not opened them in.
+            The document tools can see only the file they are open in. SendArc asks only
+            to send mail through Gmail — it cannot read your inbox, contacts or Drive.
           </p>
         </div>
 
         <div class="principle">
           <span class="n">03</span>
-          <h3>Nothing leaves the document</h3>
+          <h3>The data path is explicit</h3>
           <p>
-            No servers, no analytics, no accounts, no AI services. Your text is read and
-            edited inside Google&rsquo;s own runtime and goes nowhere else. There is nothing
-            to leak because there is nothing collected.
+            The document tools make no network requests. SendArc previews locally, then
+            sends the approved message directly to Google. Product pages state the boundary
+            instead of hiding it behind a general privacy claim.
           </p>
         </div>
 
@@ -143,7 +155,7 @@
 
   <section>
     <div class="wrap wrap-narrow">
-      <p class="eyebrow">Why the formatting survives</p>
+      <p class="eyebrow">One careful example</p>
       <h2>We edit documents in place.</h2>
       <p>
         The usual way to change a paragraph is to read it out as plain text, fix the string,
@@ -152,7 +164,7 @@
         membership &mdash; is discarded on the way.
       </p>
       <p>
-        Our tools never hold a &ldquo;fixed version&rdquo; of your paragraph. They compute
+        CleanPaste and SortDoc never hold a &ldquo;fixed version&rdquo; of your paragraph. They compute
         which characters to delete and which elements to move, then do exactly that. Deleting
         a character cannot disturb the formatting of the characters left behind.
       </p>
@@ -199,6 +211,7 @@ to postpone it.</pre>
     <span class="spacer"></span>
     <a href="/cleanpaste/">CleanPaste</a>
     <a href="/sortdoc/">SortDoc</a>
+    <a href="/sendarc/">SendArc</a>
     <a href="https://github.com/kapapi-dev">GitHub</a>
     <a href="mailto:support@kapapi.dev">support@kapapi.dev</a>
   </div>

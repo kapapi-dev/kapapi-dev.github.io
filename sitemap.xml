@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kapapi.dev/</loc><lastmod>2026-09-01</lastmod></url>
+  <url><loc>https://kapapi.dev/</loc><lastmod>2026-09-02</lastmod></url>
   <url><loc>https://kapapi.dev/cleanpaste/</loc><lastmod>2026-09-01</lastmod></url>
   <url><loc>https://kapapi.dev/cleanpaste/privacy.html</loc><lastmod>2026-09-01</lastmod></url>
   <url><loc>https://kapapi.dev/cleanpaste/terms.html</loc><lastmod>2026-09-01</lastmod></url>
@@ -9,4 +9,5 @@
   <url><loc>https://kapapi.dev/sortdoc/privacy.html</loc><lastmod>2026-09-01</lastmod></url>
   <url><loc>https://kapapi.dev/sortdoc/terms.html</loc><lastmod>2026-09-01</lastmod></url>
   <url><loc>https://kapapi.dev/sortdoc/support.html</loc><lastmod>2026-09-01</lastmod></url>
+  <url><loc>https://kapapi.dev/sendarc/</loc><lastmod>2026-09-02</lastmod></url>
 </urlset>

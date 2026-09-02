@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SendArc — legacy Windows email through Gmail | KaPaPi</title>
+<meta name="description" content="SendArc bridges Simple MAPI email from legacy Windows applications to Gmail with a local preview and explicit send confirmation.">
+<link rel="canonical" href="https://kapapi.dev/sendarc/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b63f6'/%3E%3Cpath d='M6 21c2-8 7-12 14-12 3 0 5 1 7 3-7-1-12 2-15 9z' fill='%23fff'/%3E%3Cpath d='M9 23c3-6 8-9 15-8 1 0 2 1 3 1-5 0-9 3-11 7z' fill='%23b9d5ff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kapapi.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <nav class="site-nav">
+      <a href="/cleanpaste/">CleanPaste</a>
+      <a href="/sortdoc/">SortDoc</a>
+      <a href="/sendarc/">SendArc</a>
+      <a href="https://github.com/kapapi-dev/sendarc">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section style="padding-top:3.5rem">
+<div class="wrap wrap-narrow prose">
+
+  <p class="eyebrow" style="color:var(--sendarc)">A KaPaPi product for Windows</p>
+  <h1 style="font-size:clamp(2.2rem,5.5vw,3.2rem)">SendArc</h1>
+  <p class="lead">
+    <strong>SendArc lets legacy Windows applications send email through Gmail without a
+    desktop mail client.</strong> It bridges their Simple MAPI email command into a local
+    preview, then sends only after you confirm the message.
+  </p>
+
+  <div class="note" style="border-left-color:var(--sendarc)">
+    <p><strong>Release candidate:</strong> the public Windows beta is still completing its
+    final real-account and installation checks. No downloadable release is being claimed yet.</p>
+  </div>
+
+  <h2>What stays familiar</h2>
+  <p>Your existing accounting, ERP, CRM or other Windows application keeps using its normal
+  email command. SendArc receives the message locally and shows the recipients, subject, body
+  and attachments before anything is transmitted.</p>
+
+  <h2>A deliberately narrow Google permission</h2>
+  <table>
+    <tr><th>Permission</th><th>What it allows</th></tr>
+    <tr><td><code>gmail.send</code></td><td>Send the message you approve through Gmail</td></tr>
+    <tr><td>Not requested</td><td>Reading your inbox, contacts, Drive files or account profile</td></tr>
+  </table>
+  <p>OAuth credentials are stored in Windows Credential Manager. Message content travels directly
+  from the Windows app to Google after the explicit Send action; KaPaPi does not operate a relay
+  that receives or stores the message.</p>
+
+  <h2>Current beta scope</h2>
+  <ul>
+    <li>Windows 10 and Windows 11, with both 32-bit and 64-bit Simple MAPI applications.</li>
+    <li>Gmail and Google Workspace accounts.</li>
+    <li>Local preview with explicit Send, Cancel and retry behavior.</li>
+    <li>Open-source implementation and an unsigned first beta while no paid signing route is used.</li>
+  </ul>
+
+  <p>
+    <a class="button-link" href="https://sendarc.pages.dev/">Visit the SendArc product site &rarr;</a>
+  </p>
+  <p style="color:var(--ink-muted);font-size:0.95rem">
+    Source and compatibility reports:
+    <a href="https://github.com/KapapiDev/sendarc">github.com/KapapiDev/sendarc</a>
+  </p>
+
+</div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="/" style="font-size:1rem;text-decoration:none">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <span class="spacer"></span>
+    <a href="/sendarc/">SendArc</a>
+    <a href="https://sendarc.pages.dev/privacy/">Privacy</a>
+    <a href="https://sendarc.pages.dev/terms/">Terms</a>
+    <a href="https://sendarc.pages.dev/support/">Support</a>
+    <a href="mailto:support@kapapi.dev">support@kapapi.dev</a>
+  </div>
+</footer>
+
+</body>
+</html>

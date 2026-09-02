@@ -351,6 +351,52 @@ SORTDOC_SUPPORT = """
   <p>Please do not paste confidential document content into a public issue.</p>
 """
 
+SENDARC_INDEX = """
+  <p class="eyebrow" style="color:var(--sendarc)">A KaPaPi product for Windows</p>
+  <h1 style="font-size:clamp(2.2rem,5.5vw,3.2rem)">SendArc</h1>
+  <p class="lead">
+    <strong>SendArc lets legacy Windows applications send email through Gmail without a
+    desktop mail client.</strong> It bridges their Simple MAPI email command into a local
+    preview, then sends only after you confirm the message.
+  </p>
+
+  <div class="note" style="border-left-color:var(--sendarc)">
+    <p><strong>Release candidate:</strong> the public Windows beta is still completing its
+    final real-account and installation checks. No downloadable release is being claimed yet.</p>
+  </div>
+
+  <h2>What stays familiar</h2>
+  <p>Your existing accounting, ERP, CRM or other Windows application keeps using its normal
+  email command. SendArc receives the message locally and shows the recipients, subject, body
+  and attachments before anything is transmitted.</p>
+
+  <h2>A deliberately narrow Google permission</h2>
+  <table>
+    <tr><th>Permission</th><th>What it allows</th></tr>
+    <tr><td><code>gmail.send</code></td><td>Send the message you approve through Gmail</td></tr>
+    <tr><td>Not requested</td><td>Reading your inbox, contacts, Drive files or account profile</td></tr>
+  </table>
+  <p>OAuth credentials are stored in Windows Credential Manager. Message content travels directly
+  from the Windows app to Google after the explicit Send action; KaPaPi does not operate a relay
+  that receives or stores the message.</p>
+
+  <h2>Current beta scope</h2>
+  <ul>
+    <li>Windows 10 and Windows 11, with both 32-bit and 64-bit Simple MAPI applications.</li>
+    <li>Gmail and Google Workspace accounts.</li>
+    <li>Local preview with explicit Send, Cancel and retry behavior.</li>
+    <li>Open-source implementation and an unsigned first beta while no paid signing route is used.</li>
+  </ul>
+
+  <p>
+    <a class="button-link" href="https://sendarc.pages.dev/">Visit the SendArc product site &rarr;</a>
+  </p>
+  <p style="color:var(--ink-muted);font-size:0.95rem">
+    Source and compatibility reports:
+    <a href="https://github.com/KapapiDev/sendarc">github.com/KapapiDev/sendarc</a>
+  </p>
+"""
+
 PAGES = [
     ("cleanpaste", "terms.html",
      "CleanPaste terms of service | KaPaPi",
@@ -376,4 +422,8 @@ PAGES = [
      "SortDoc support | KaPaPi",
      "Help for SortDoc: how to use it, what it refuses to do, and how to report a problem.",
      SORTDOC_SUPPORT),
+    ("sendarc", "index.html",
+     "SendArc — legacy Windows email through Gmail | KaPaPi",
+     "SendArc bridges Simple MAPI email from legacy Windows applications to Gmail with a local preview and explicit send confirmation.",
+     SENDARC_INDEX),
 ]
