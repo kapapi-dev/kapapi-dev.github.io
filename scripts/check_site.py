@@ -101,8 +101,15 @@ def main() -> None:
     except (ET.ParseError, OSError) as error:
         errors.append(f"sitemap.xml: {error}")
         locations = set()
-    if "https://kapapi.dev/sendarc/" not in locations:
-        errors.append("sitemap.xml: missing SendArc product URL")
+    required_sendarc_urls = {
+        "https://kapapi.dev/sendarc/",
+        "https://kapapi.dev/sendarc/privacy.html",
+        "https://kapapi.dev/sendarc/terms.html",
+        "https://kapapi.dev/sendarc/support.html",
+    }
+    for required_url in sorted(required_sendarc_urls):
+        if required_url not in locations:
+            errors.append(f"sitemap.xml: missing {required_url}")
 
     if errors:
         raise SystemExit("\n".join(errors))

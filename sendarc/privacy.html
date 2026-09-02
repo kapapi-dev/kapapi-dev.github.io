@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SendArc privacy policy | KaPaPi</title>
+<meta name="description" content="How SendArc processes local email previews, Gmail OAuth data and Business Beta records.">
+<link rel="canonical" href="https://kapapi.dev/sendarc/privacy.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b63f6'/%3E%3Cpath d='M6 21c2-8 7-12 14-12 3 0 5 1 7 3-7-1-12 2-15 9z' fill='%23fff'/%3E%3Cpath d='M9 23c3-6 8-9 15-8 1 0 2 1 3 1-5 0-9 3-11 7z' fill='%23b9d5ff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/kapapi.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <nav class="site-nav">
+      <a href="/cleanpaste/">CleanPaste</a>
+      <a href="/sortdoc/">SortDoc</a>
+      <a href="/sendarc/">SendArc</a>
+      <a href="https://github.com/kapapi-dev/sendarc">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section style="padding-top:3.5rem">
+<div class="wrap wrap-narrow prose">
+
+  <p class="eyebrow" style="color:var(--sendarc)">SendArc</p>
+  <h1 style="font-size:clamp(2rem,5vw,2.8rem)">Privacy policy</h1>
+  <p style="color:var(--ink-muted)">Last updated: 2 September 2026</p>
+
+  <div class="note" style="border-left-color:var(--sendarc)">
+    <p>SendArc processes an outgoing email locally, shows it for review, and sends it directly
+    from the Windows app to Google only after the user confirms Send. KaPaPi does not operate an
+    email relay or read the user&rsquo;s inbox.</p>
+  </div>
+
+  <h2>Desktop application data</h2>
+  <p>A Simple MAPI request may include To, Cc, Bcc, subject, body, formatting and attachments.
+  SendArc writes the pending request and copied attachments to a per-user local queue so the user
+  can review, send or discard it. Pending data remains on that Windows device until it is sent,
+  discarded or removed through local maintenance.</p>
+  <p>When the user confirms Send, SendArc builds the MIME message locally and sends it directly to
+  Google&rsquo;s Gmail API over HTTPS. Message content is not sent through a KaPaPi or SendArc
+  server.</p>
+
+  <h2>Google account access</h2>
+  <p>SendArc requests only <code>https://www.googleapis.com/auth/gmail.send</code>, which allows it
+  to send the message the user approved. It does not request inbox-reading, mailbox-search,
+  contacts, calendar, <code>gmail.compose</code>, <code>gmail.modify</code> or
+  <code>mail.google.com</code> access.</p>
+  <p>OAuth tokens are stored in Windows Credential Manager. They are not stored in local queue
+  files, website analytics or KaPaPi servers. The user can disconnect SendArc and revoke access
+  from their Google Account.</p>
+
+  <h2>Google API Limited Use</h2>
+  <p>SendArc&rsquo;s use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
+  User Data Policy</a>, including its Limited Use requirements. Google API data is used only to
+  provide the prominent user-facing Gmail send feature, is not sold, is not used for advertising,
+  and is not used to train generalized AI or machine-learning models.</p>
+
+  <h2>Logs and app telemetry</h2>
+  <p>The desktop beta has no hidden telemetry. Local diagnostics are designed to exclude OAuth
+  tokens, recipients, subjects, bodies, attachment names and paths, Gmail message IDs and Gmail
+  response bodies. Users should still inspect and sanitize diagnostics before sharing them.</p>
+
+  <h2>Website and Business Beta data</h2>
+  <p>The full product site at <a href="https://sendarc.pages.dev/">sendarc.pages.dev</a> is hosted
+  by Cloudflare. Its optional Business Beta form stores work email, company, approximate seat
+  range, current workflow, an optional note and basic campaign labels in Cloudflare D1. Do not
+  submit message content, recipients, credentials or confidential attachments.</p>
+  <p>Lead data is used only to evaluate and contact beta participants and is retained for no more
+  than 12 months after the last product or beta contact. A one-way anti-abuse hash may be retained
+  for no more than 24 hours. The site may record allowlisted page and CTA events without
+  advertising cookies, cross-site identifiers or desktop email data.</p>
+
+  <h2>Processors and disclosure</h2>
+  <ul>
+    <li>Google processes OAuth and Gmail API data under Google&rsquo;s policies.</li>
+    <li>Cloudflare processes full-site delivery, security, Pages Functions and D1 data.</li>
+    <li>GitHub hosts the source, releases and public issue forms and serves this KaPaPi page.</li>
+  </ul>
+  <p>KaPaPi does not sell personal data. Data may be disclosed only when required by law or to the
+  processors above as necessary to operate the stated service.</p>
+
+  <h2>Access and deletion</h2>
+  <p>To request access to or deletion of a Business Beta record, email
+  <a href="mailto:maxtop9843@gmail.com">maxtop9843@gmail.com</a> from the submitted address.
+  SendArc is operated by 장형진 under the KaPaPi developer brand.</p>
+
+</div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="wordmark" href="/" style="font-size:1rem;text-decoration:none">
+      <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      KaPaPi
+    </a>
+    <span class="spacer"></span>
+    <a href="/sendarc/">SendArc</a>
+    <a href="/sendarc/privacy.html">Privacy</a>
+    <a href="/sendarc/terms.html">Terms</a>
+    <a href="/sendarc/support.html">Support</a>
+    <a href="mailto:maxtop9843@gmail.com">maxtop9843@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
