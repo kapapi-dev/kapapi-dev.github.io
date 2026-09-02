@@ -24,6 +24,7 @@
   /* Product accents */
   --cleanpaste: #0f7b8a;
   --sortdoc:    #1f5fb8;
+  --sendarc:    #0b63f6;
 
   --radius: 12px;
   --measure: 34rem;
@@ -45,6 +46,7 @@
     --accent-ink: #f0bd77;
     --cleanpaste: #4fc3d1;
     --sortdoc:    #7aa9f0;
+    --sendarc:    #76a8ff;
   }
 }
 
@@ -74,6 +76,7 @@ body {
 
 a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
 a:hover { text-decoration-color: currentColor; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
 
 /* ---------------- the mark ---------------- */
 
@@ -111,6 +114,12 @@ a:hover { text-decoration-color: currentColor; }
 .site-nav { display: flex; gap: 1.5rem; font-size: 0.94rem; color: var(--ink-soft); }
 .site-nav a { text-decoration: none; }
 .site-nav a:hover { color: var(--ink); }
+
+@media (max-width: 42rem) {
+  .site-head { padding: 1.25rem 0; }
+  .site-head .wrap { align-items: flex-start; flex-direction: column; }
+  .site-nav { width: 100%; flex-wrap: wrap; gap: 0.65rem 1.1rem; font-size: 0.88rem; }
+}
 
 .site-foot {
   margin-top: 6rem;
@@ -172,7 +181,7 @@ code {
 
 /* ---------------- product cards ---------------- */
 
-.products { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+.products { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
 
 .product {
   --tint: var(--accent);
@@ -188,6 +197,7 @@ code {
 .product:hover { border-color: var(--tint); transform: translateY(-2px); }
 .product.cleanpaste { --tint: var(--cleanpaste); }
 .product.sortdoc { --tint: var(--sortdoc); }
+.product.sendarc { --tint: var(--sendarc); }
 
 .product .icon {
   width: 40px; height: 40px; border-radius: 10px;
@@ -199,6 +209,19 @@ code {
   display: block; background: #fff; border-radius: 2px; height: 3px;
 }
 .product .icon .bars { display: grid; gap: 3px; width: 20px; }
+.product .icon .arc-mark { position: relative; width: 24px; height: 20px; }
+.product .icon .arc-mark i {
+  position: absolute;
+  display: block;
+  height: 10px;
+  border: 3px solid #fff;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  background: transparent;
+  transform: rotate(-12deg);
+}
+.product .icon .arc-mark i:first-child { inset: 5px 0 auto 0; }
+.product .icon .arc-mark i:last-child { inset: 0 4px auto 4px; opacity: 0.72; }
 
 .product h3 { margin-bottom: 0.35rem; }
 .product .what { color: var(--ink-soft); font-size: 0.97rem; margin: 0 0 1.1rem; flex: 1; }
@@ -210,13 +233,27 @@ code {
   margin-left: 0.5rem; vertical-align: 0.15em;
 }
 
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border-radius: 9px;
+  color: #fff;
+  background: var(--sendarc);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.button-link:hover { filter: brightness(0.92); }
+
 /* ---------------- principles ---------------- */
 
 .principles { display: grid; gap: 2rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
 .principle h3 { margin-bottom: 0.4rem; }
 .principle p { color: var(--ink-soft); font-size: 0.97rem; margin: 0; }
 .principle .n {
-  font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent);
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-ink);
   display: block; margin-bottom: 0.6rem;
 }
 
