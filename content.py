@@ -379,6 +379,8 @@ SENDARC_INDEX = """
   <p>OAuth credentials are stored in Windows Credential Manager. Message content travels directly
   from the Windows app to Google after the explicit Send action; KaPaPi does not operate a relay
   that receives or stores the message.</p>
+  <p>Read the <a href="/sendarc/privacy.html">SendArc privacy policy</a> for the complete data flow,
+  retention rules and Google API Limited Use commitment.</p>
 
   <h2>Current beta scope</h2>
   <ul>
@@ -395,6 +397,150 @@ SENDARC_INDEX = """
     Source and compatibility reports:
     <a href="https://github.com/KapapiDev/sendarc">github.com/KapapiDev/sendarc</a>
   </p>
+"""
+
+SENDARC_PRIVACY = """
+  <p class="eyebrow" style="color:var(--sendarc)">SendArc</p>
+  <h1 style="font-size:clamp(2rem,5vw,2.8rem)">Privacy policy</h1>
+  <p style="color:var(--ink-muted)">Last updated: 2 September 2026</p>
+
+  <div class="note" style="border-left-color:var(--sendarc)">
+    <p>SendArc processes an outgoing email locally, shows it for review, and sends it directly
+    from the Windows app to Google only after the user confirms Send. KaPaPi does not operate an
+    email relay or read the user&rsquo;s inbox.</p>
+  </div>
+
+  <h2>Desktop application data</h2>
+  <p>A Simple MAPI request may include To, Cc, Bcc, subject, body, formatting and attachments.
+  SendArc writes the pending request and copied attachments to a per-user local queue so the user
+  can review, send or discard it. Pending data remains on that Windows device until it is sent,
+  discarded or removed through local maintenance.</p>
+  <p>When the user confirms Send, SendArc builds the MIME message locally and sends it directly to
+  Google&rsquo;s Gmail API over HTTPS. Message content is not sent through a KaPaPi or SendArc
+  server.</p>
+
+  <h2>Google account access</h2>
+  <p>SendArc requests only <code>https://www.googleapis.com/auth/gmail.send</code>, which allows it
+  to send the message the user approved. It does not request inbox-reading, mailbox-search,
+  contacts, calendar, <code>gmail.compose</code>, <code>gmail.modify</code> or
+  <code>mail.google.com</code> access.</p>
+  <p>OAuth tokens are stored in Windows Credential Manager. They are not stored in local queue
+  files, website analytics or KaPaPi servers. The user can disconnect SendArc and revoke access
+  from their Google Account.</p>
+
+  <h2>Google API Limited Use</h2>
+  <p>SendArc&rsquo;s use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
+  User Data Policy</a>, including its Limited Use requirements. Google API data is used only to
+  provide the prominent user-facing Gmail send feature, is not sold, is not used for advertising,
+  and is not used to train generalized AI or machine-learning models.</p>
+
+  <h2>Logs and app telemetry</h2>
+  <p>The desktop beta has no hidden telemetry. Local diagnostics are designed to exclude OAuth
+  tokens, recipients, subjects, bodies, attachment names and paths, Gmail message IDs and Gmail
+  response bodies. Users should still inspect and sanitize diagnostics before sharing them.</p>
+
+  <h2>Website and Business Beta data</h2>
+  <p>The full product site at <a href="https://sendarc.pages.dev/">sendarc.pages.dev</a> is hosted
+  by Cloudflare. Its optional Business Beta form stores work email, company, approximate seat
+  range, current workflow, an optional note and basic campaign labels in Cloudflare D1. Do not
+  submit message content, recipients, credentials or confidential attachments.</p>
+  <p>Lead data is used only to evaluate and contact beta participants and is retained for no more
+  than 12 months after the last product or beta contact. A one-way anti-abuse hash may be retained
+  for no more than 24 hours. The site may record allowlisted page and CTA events without
+  advertising cookies, cross-site identifiers or desktop email data.</p>
+
+  <h2>Processors and disclosure</h2>
+  <ul>
+    <li>Google processes OAuth and Gmail API data under Google&rsquo;s policies.</li>
+    <li>Cloudflare processes full-site delivery, security, Pages Functions and D1 data.</li>
+    <li>GitHub hosts the source, releases and public issue forms and serves this KaPaPi page.</li>
+  </ul>
+  <p>KaPaPi does not sell personal data. Data may be disclosed only when required by law or to the
+  processors above as necessary to operate the stated service.</p>
+
+  <h2>Access and deletion</h2>
+  <p>To request access to or deletion of a Business Beta record, email
+  <a href="mailto:maxtop9843@gmail.com">maxtop9843@gmail.com</a> from the submitted address.
+  SendArc is operated by 장형진 under the KaPaPi developer brand.</p>
+"""
+
+SENDARC_TERMS = """
+  <p class="eyebrow" style="color:var(--sendarc)">SendArc</p>
+  <h1 style="font-size:clamp(2rem,5vw,2.8rem)">Beta terms</h1>
+  <p style="color:var(--ink-muted)">Last updated: 2 September 2026</p>
+
+  <h2>The agreement</h2>
+  <p>These terms cover evaluation of SendArc, a Windows utility published under the KaPaPi
+  developer brand and operated by 장형진. By installing or using SendArc you accept them. If you
+  do not accept them, do not install or use the beta.</p>
+
+  <h2>Beta software</h2>
+  <p>SendArc is pre-release software provided for evaluation without warranty. Test it with
+  non-critical workflows first, keep appropriate backups, and review every local preview before
+  sending. Compatibility depends on how each Windows application implements Simple MAPI.</p>
+
+  <h2>Acceptable use</h2>
+  <p>Use SendArc only with accounts, recipients and applications you are authorized to operate.
+  Do not use it for unsolicited bulk mail, credential theft, bypassing access controls, unlawful
+  content or infringement of another person&rsquo;s rights.</p>
+
+  <h2>No payment today</h2>
+  <p>The current Business Beta form is an expression of interest, not an order. No payment is
+  collected. Any future paid offer will require separate, explicit terms.</p>
+
+  <h2>Your data</h2>
+  <p>The <a href="/sendarc/privacy.html">SendArc privacy policy</a> explains local message
+  handling, direct Gmail API transmission, OAuth token storage and website data.</p>
+
+  <h2>Open-source licences</h2>
+  <p>Software rights are governed by the repository&rsquo;s licences and third-party notices.
+  SendArc incorporates and modifies code from go-mapi under LGPL-3.0-or-later. These site terms do
+  not reduce rights granted by that licence, and neither the go-mapi author nor Affixa endorses or
+  is affiliated with SendArc.</p>
+
+  <h2>No warranty and limitation</h2>
+  <p>To the fullest extent permitted by law, the beta is provided &ldquo;as is&rdquo; without
+  warranties, and the operator is not liable for indirect, incidental or consequential loss.
+  Nothing here limits liability that cannot legally be limited or mandatory consumer rights.</p>
+
+  <h2>Changes and governing law</h2>
+  <p>Material changes will be published here with a new date. These terms are governed by the laws
+  of the Republic of Korea without depriving users of mandatory protections that apply where they
+  live.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:maxtop9843@gmail.com">maxtop9843@gmail.com</a></p>
+"""
+
+SENDARC_SUPPORT = """
+  <p class="eyebrow" style="color:var(--sendarc)">SendArc</p>
+  <h1 style="font-size:clamp(2rem,5vw,2.8rem)">Support</h1>
+  <p class="lead">Get help without exposing private email, account or customer data.</p>
+
+  <h2>Before reporting a problem</h2>
+  <p>Record the SendArc version, Windows version, source application and whether it is 32-bit or
+  64-bit if known. Describe the steps and visible result without including the real message.</p>
+
+  <h2>Support channels</h2>
+  <ul>
+    <li><strong>Bug report:</strong>
+      <a href="https://github.com/KapapiDev/sendarc/issues/new?template=bug_report.yml">open the
+      sanitized bug form</a></li>
+    <li><strong>Compatibility report:</strong>
+      <a href="https://github.com/KapapiDev/sendarc/issues/new?template=compatibility_report.yml">report
+      a Simple MAPI application</a></li>
+    <li><strong>Feature request:</strong>
+      <a href="https://github.com/KapapiDev/sendarc/issues/new?template=feature_request.yml">describe
+      the user problem</a></li>
+    <li><strong>Private contact or deletion request:</strong>
+      <a href="mailto:maxtop9843@gmail.com">maxtop9843@gmail.com</a></li>
+  </ul>
+
+  <h2>Never include</h2>
+  <p>Email bodies, recipient addresses, attachments, OAuth tokens, Google passwords, OAuth client
+  credentials, private logs or confidential customer data. Sanitize diagnostics before sharing
+  them.</p>
 """
 
 PAGES = [
@@ -426,4 +572,16 @@ PAGES = [
      "SendArc — legacy Windows email through Gmail | KaPaPi",
      "SendArc bridges Simple MAPI email from legacy Windows applications to Gmail with a local preview and explicit send confirmation.",
      SENDARC_INDEX),
+    ("sendarc", "privacy.html",
+     "SendArc privacy policy | KaPaPi",
+     "How SendArc processes local email previews, Gmail OAuth data and Business Beta records.",
+     SENDARC_PRIVACY),
+    ("sendarc", "terms.html",
+     "SendArc beta terms | KaPaPi",
+     "Plain-language terms for evaluating the SendArc Windows beta.",
+     SENDARC_TERMS),
+    ("sendarc", "support.html",
+     "SendArc support | KaPaPi",
+     "Support and sanitized issue-reporting routes for the SendArc Windows beta.",
+     SENDARC_SUPPORT),
 ]

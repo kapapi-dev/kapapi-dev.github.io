@@ -64,7 +64,7 @@ FOOT = """
     <a href="__PRIVACY__">Privacy</a>
     <a href="__TERMS__">Terms</a>
     <a href="__SUPPORT__">Support</a>
-    <a href="mailto:support@kapapi.dev">support@kapapi.dev</a>
+    <a href="mailto:__EMAIL__">__EMAIL__</a>
   </div>
 </footer>
 
@@ -103,16 +103,19 @@ PRODUCT_LINKS = {
         "privacy": "/cleanpaste/privacy.html",
         "terms": "/cleanpaste/terms.html",
         "support": "/cleanpaste/support.html",
+        "email": "support@kapapi.dev",
     },
     "sortdoc": {
         "privacy": "/sortdoc/privacy.html",
         "terms": "/sortdoc/terms.html",
         "support": "/sortdoc/support.html",
+        "email": "support@kapapi.dev",
     },
     "sendarc": {
-        "privacy": "https://sendarc.pages.dev/privacy/",
-        "terms": "https://sendarc.pages.dev/terms/",
-        "support": "https://sendarc.pages.dev/support/",
+        "privacy": "/sendarc/privacy.html",
+        "terms": "/sendarc/terms.html",
+        "support": "/sendarc/support.html",
+        "email": "maxtop9843@gmail.com",
     },
 }
 
@@ -132,6 +135,7 @@ def page(slug, filename, title, desc, body):
         .replace("__PRIVACY__", links["privacy"])
         .replace("__TERMS__", links["terms"])
         .replace("__SUPPORT__", links["support"])
+        .replace("__EMAIL__", links["email"])
     )
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), slug, filename)
     if not os.path.isdir(os.path.dirname(path)):
