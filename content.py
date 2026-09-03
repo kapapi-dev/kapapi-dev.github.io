@@ -402,7 +402,7 @@ SENDARC_INDEX = """
 SENDARC_PRIVACY = """
   <p class="eyebrow" style="color:var(--sendarc)">SendArc</p>
   <h1 style="font-size:clamp(2rem,5vw,2.8rem)">Privacy policy</h1>
-  <p style="color:var(--ink-muted)">Last updated: 2 September 2026</p>
+  <p style="color:var(--ink-muted)">Last updated: 4 September 2026</p>
 
   <div class="note" style="border-left-color:var(--sendarc)">
     <p>SendArc processes an outgoing email locally, shows it for review, and sends it directly
@@ -445,16 +445,28 @@ SENDARC_PRIVACY = """
   by Cloudflare. Its optional Business Beta form stores work email, company, approximate seat
   range, current workflow, an optional note and basic campaign labels in Cloudflare D1. Do not
   submit message content, recipients, credentials or confidential attachments.</p>
-  <p>Lead data is used only to evaluate and contact beta participants and is retained for no more
-  than 12 months after the last product or beta contact. A one-way anti-abuse hash may be retained
-  for no more than 24 hours. The site may record allowlisted page and CTA events without
-  advertising cookies, cross-site identifiers or desktop email data.</p>
+  <p>Lead data is used only to evaluate and contact beta participants. It expires 12 months after
+  the latest form submission, or earlier on a verified deletion request. A separate rate-limit
+  table stores a secret-keyed IP hash specific to the endpoint and current hour. It changes each
+  hour and expires 24 hours after its hourly window starts; raw IP addresses and user-agent
+  strings are not copied into these tables.</p>
+  <p>First-party events contain only allowlisted event names, known public page paths, referrer
+  hostnames and coarse campaign labels. Full referrer URLs are stripped before transmission.
+  Events do not contain visitor hashes, advertising cookies, cross-site identifiers or desktop
+  email data. Events expire after 90 days; a beta-submission event is recorded only when the
+  form is successfully saved.</p>
+  <p>A scheduled Cloudflare maintenance task deletes expired rows every 15 minutes, even without
+  website traffic. Deletion occurs on the next successful cleanup and may be delayed by a service
+  outage. Cloudflare recovery history can retain deleted data for up to seven additional days on
+  the current free plan; recovery copies are not used for marketing or routine analytics.</p>
 
   <h2>Processors and disclosure</h2>
   <ul>
     <li>Google processes OAuth and Gmail API data under Google&rsquo;s policies.</li>
-    <li>Cloudflare processes full-site delivery, security, Pages Functions and D1 data.</li>
+    <li>Cloudflare processes full-site delivery, security, Pages Functions, D1 and maintenance logs.</li>
     <li>GitHub hosts the source, releases and public issue forms and serves this KaPaPi page.</li>
+    <li>This KaPaPi page loads fonts from Google Fonts, which receives ordinary font-request
+      metadata. The separate SendArc product site hosts its fonts locally.</li>
   </ul>
   <p>KaPaPi does not sell personal data. Data may be disclosed only when required by law or to the
   processors above as necessary to operate the stated service.</p>
